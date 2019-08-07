@@ -18,7 +18,10 @@ body{
 	width: 1100px;
 	margin: 0 auto;
 }
-
+.ba-conteiner--slider2{
+    width: 1100px;
+	margin: 0 auto;
+}
 /* HEADER */
 .ba-header{
 	background: #b8b2ce url('../images/DeathtoStock_Wired7.png')  50% no-repeat;
@@ -263,24 +266,11 @@ body{
 	position: relative;
 }
 .ba-slider2{
-    display: flex;
-    overflow: hidden;
-    padding: 75px 0 100px 0;
+   width: 100%;
 }
 .ba-slider2__element{
-    position: relative;
     width: 350px;
-
-}
-.ba-slider2__element2{
-    position: relative;
-    width: 350px;
-    margin: 0 45px 0 45px;
-}
-.ba-slider2__element4{
-	position: relative;
-    width: 350px;
-    margin: 0 45px 0 45px;
+    margin: 0 30px 0 30px;
 }
 .ba-section3__title{
 	font-family: 'ProximaNova', Arial, sans-serif;
@@ -293,22 +283,24 @@ body{
 	justify-content: center;
 	padding-top: 45px;
 }
-
+.ba-slider2__images{
+	height: 260px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-image: linear-gradient(to bottom, #ebebeb, #ebebeb 50%, #fff, #fff 50%);
+}
 .ba-slider2__foto{
 	width: 240px;
 	height: 240px;
 	border-radius: 50%;
 	border: 10px solid #ebebeb;
-    overflow: hidden;
 }
-.ba-slider2__foto--center{
-	position: absolute;
-	top: -110px;
-	left: calc(50% - 120px);
-}
+
+
 .ba-slider2__info{
 	width: 350px;
-	height: 280px;
+
 	background-color: #fff;
 	display: flex;
 	justify-content: center;
@@ -334,14 +326,14 @@ body{
 	text-align: center;
 	font-size: 1.333rem;
 	text-transform: uppercase;
-	 padding-top: 35%;
+	padding-top: 5%;
 }
 .ba-slider2__info--position{
 	color: #665f60;
     font-size: 1.333rem;
     font-style: italic;
     text-align: center;
-    padding-top: 5%;
+    padding: 5% 0 5% 0;
 }
 .ba-slider2__icons--center img{
 	border: none;
@@ -369,6 +361,8 @@ body{
 	bottom: calc(50% - 28px);
     cursor: pointer;
 }
+
+
 /* MAPS */
 .map{
 	width: 100%;
@@ -379,14 +373,13 @@ body{
 	position: relative;
 	margin: 0;
 	padding: 0;
+	height: ;
 }
 .ba-slider2__foto--position{
 	margin-top: 20px;
 }
 /* FORM */
-.ba-form{
-	position: relative;
-}
+
 .ba-form__name{
 	width: 415px;
 	height: 55px;
@@ -427,14 +420,14 @@ textarea{
    background-color: #ccc;
 }
 .ba-form__button--center{
-	width: 100%;
+	width: 856px;
 	display: flex;
 	justify-content: center;
 	padding: 50px 0 50px 0;
 }
 .ba-form__absolute{
 	position: absolute;
-	bottom: -20%;
+	bottom: 0;
 	left: calc(50% - 428px );
 }
 ::placeholder{
@@ -442,6 +435,51 @@ textarea{
 	color: #fff;
 	font-style: italic;
 	font-size: 1rem;
+}
+/* FORM --ICONS */
+
+.ba-form__icons{
+	position: absolute;
+	right: 0;
+	bottom: 60%;
+    display: flex;
+	flex-direction: column;
+	cursor: pointer;
+}
+
+.ba-form__adress--info{
+	color:  red;
+	height: 91px;
+	background-color: #ebebeb;
+    opacity: 0.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ba-form__adress--icons{
+    display: flex;
+}
+.ba-form__phone{
+   display: flex;
+}
+.ba-form__adress--info p{
+	color: #c0bdc5;
+	width: 200px;
+}
+.ba-img-scroll{
+    position: absolute;
+    right: 10%;
+	bottom: 5%;
+}
+.ba-form__title{
+	position: absolute;
+	top: 2%;
+	left: calc(50% - 120px);
+}
+.ba-slider__title--form{
+	width: 240px;
+	font-size: 2rem;
+	font-family: 'ProximaNova', Arial, sans-serif;
 }
 /* FOOTER */
 .ba-footer{
@@ -471,4 +509,29 @@ textarea{
 }
 .ba-footer__info{
 	width: 50%;
+}
+
+@media screen and (min-width: 600px) and (max-width: 800px){
+    .ba-conteiner{
+    	width: 600px;
+    	margin: 0 auto;
+    	background-color: red;
+     }
+    .section2__elem--style{
+	    height: 250px;
+	 }
+	 .ba-slider2__element{
+        width: 200px;
+        height: 400px;
+        margin: 0 15px 0 15px;
+      }
+      .ba-conteiner--slider2{
+         width: 600px;
+	     margin: 0 auto;
+}
+    .main{
+	width: 100%;
+	height: 100%;
+	background-color: #ebebeb;
+}
 }

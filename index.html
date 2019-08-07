@@ -6,14 +6,14 @@
 	<link rel="stylesheet" type="text/css" href="style/normalize.css">
 	<link rel="stylesheet" type="text/css" href="style/slick.css">
 	<link rel="stylesheet" type="text/css" href="style/slick-theme.css">
-   <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1"></script>
+   <script src="script/bundles/vue.js"></script>
    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700&display=swap" rel="stylesheet">
    <link rel="stylesheet" type="text/css" href="style/style.css">
    <link rel="icon" href="icons8.png" type="image/x-icon" />
 </head>
 <body>
 	 <header>
-            <div class="ba-header">
+            <div class="ba-header" id="head">
            	     <div class="ba-conteiner">
                     <div class="ba-nav">
                     	<div class="ba-nav__left">
@@ -149,76 +149,18 @@
 		<div class="ba-section3">
 			<span class="ba-slider2--left">&lt;</span>
 	        <span class="ba-slider2--right">&gt;</span>
-		    <div class="ba-conteiner">
+		    <div class="ba-conteiner--slider2">
                 <div class="ba-section3__logo">
                 	<img src="images/Icon-Team.png">
                 </div>
                 <h1 class="ba-section3__title">MEET OUR TEAM</h1>
-				<div  class="ba-slider2" id="ba-slider2">
-					<div class="ba-slider2__element">
-	                     <img src="images/Layer-1.png" class="ba-slider2__foto ba-slider2__foto--center">
-	                     <div class="ba-slider2__info">
-		                     	<span class="ba-slider2__info--name">Miguel Obrien</span>
-		                     	<span class="ba-slider2__info--position">CEO & Founder</span>
-	                     </div>
-	                     <div class="ba-slider2__icons">
-	                         <div class="ba-slider2__icons--center">
-			                     	<img src="images/linked-in.png">
-		              	     		<img src="images/google+.png">
-		              				<img src="images/facebook.png">
-		              				<img src="images/twitter.png">
-              			     </div>
-                        </div>
-	                 </div>
-	                 <div class="ba-slider2__element2">
-	                      <img src="images/Layer-4.png" class="ba-slider2__foto ba-slider2__foto--center">
-	                      <div class="ba-slider2__info">
-		                     	<span class="ba-slider2__info--name">Jackie Carroll</span>
-		                     	<span class="ba-slider2__info--position">Art Director</span>
-	                     </div>
-	                     <div class="ba-slider2__icons">
-	                       <div class="ba-slider2__icons--center">
-	                       	    <img src="images/behance.png">
-		                     	<img src="images/linked-in.png">
-	              	     		<img src="images/google+.png">
-	              				<img src="images/facebook.png">
-	              				<img src="images/twitter.png">
-              			   </div>
-	                     </div>
-                      </div>
-                      <div class="ba-slider2__element">
-	                      <img src="images/Layer-5.png" class="ba-slider2__foto ba-slider2__foto--center">
-	                      <div class="ba-slider2__info">
-		                     	<span class="ba-slider2__info--name">Ida Morrison</span>
-		                     	<span class="ba-slider2__info--position">Designer</span>
-	                     </div>
-	                     <div class="ba-slider2__icons">
-	                       <div class="ba-slider2__icons--center">
-	                       	    <img src="images/behance.png">
-		                     	<img src="images/linked-in.png">
-	              	     		<img src="images/google+.png">
-	              				<img src="images/facebook.png">
-	              				<img src="images/twitter.png">
-              			   </div>
-	                     </div>
-                      </div>
-                      <div class="ba-slider2__element4">
-	                      <img src="images/Layer-6.jpg" class="ba-slider2__foto ba-slider2__foto--center">
-	                      <div class="ba-slider2__info">
-		                     	<span class="ba-slider2__info--name">Yavor Makc</span>
-		                     	<span class="ba-slider2__info--position"> Front-End Developer</span>
-	                     </div>
-	                     <div class="ba-slider2__icons">
-	                       <div class="ba-slider2__icons--center">
-	                       	    <img src="images/behance.png">
-		                     	<img src="images/linked-in.png">
-	              	     		<img src="images/google+.png">
-	              				<img src="images/facebook.png">
-	              				<img src="images/twitter.png">
-              			   </div>
-	                     </div>
-                      </div>
-				</div>
+
+                 <div id="slider2">
+                    <div id="ba-slider2" class="ba-slider2">
+                 	    <user-info v-for="worker in workers" :worker="worker">
+                 	    </user-info>
+                    </div>
+                 </div>
 		    </div>
         </div>
 
@@ -247,7 +189,34 @@
 					    <form>
 					</div>
 				</div>
-	    	 </div>
+				<div class="ba-form__icons" >
+	        	   	     <div class="ba-form__adress" >
+	        	   	        <div class="ba-form__adress--icons" id="icons1">
+	        	   	        	<img @click="show = !show" :aria-expanded="show ? 'true' : 'falSse'" class="ba-form__adress--icons" src="images/Icon-Address.png">
+                            	<div v-if="show" class="ba-form__adress--info">
+                             		<p>Ikan Piranha Atas 220C  Malang - East Java Indonesia
+                             		</p>
+ 	        	            	</div>
+	        	         </div>
+	        	         <div class="ba-form__phone" id="icons2">
+                            	<img @click="show = !show" :aria-expanded="show ? 'true' : 'falSse'" class="ba-form__adress--icons" src="images/phone.png">
+                            	<div v-if="show" class="ba-form__adress--info">
+                             		<p>+6281235966914</p>
+                           		 </div>
+
+                         </div>
+	        	 </div>
+	    	  </div>
+	    	<a class="ba-img-scroll" href="#head" ><img src="images/interface---arrow-top-.png" ></a>
+	    	<div class="ba-form__title">
+	    	    <div class="ba-slider__title--center">
+	         		<img src="images/Layer-7.png">
+
+	         	</div>
+                <h1 class="ba-slider__title ba-slider__title--form">
+	         		GET IN TOUCH
+	            </h1>
+	        </div>
 	    </div>
 	</main>
 
